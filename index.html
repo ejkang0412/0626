@@ -44,10 +44,10 @@
       color: #a03e3e;
     }
     .people-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-items: center;
+      gap: 30px 20px;
     }
     .person {
       display: flex;
@@ -88,9 +88,9 @@
       border-radius: 12px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.2);
       padding: 24px;
-      width: 80%;
+      width: 90%;
       max-width: 520px;
-      height: 70vh;
+      max-height: 85vh;
       overflow-y: auto;
       z-index: 1000;
       animation: fadeIn 0.3s ease;
@@ -138,19 +138,23 @@
       font-weight: bold;
       color: #b03535;
     }
+    @media (max-width: 600px) {
+      .modal {
+        width: 95%;
+        max-height: 90vh;
+      }
+      .people-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   </style>
 </head>
 <body>
-<!-- 감동적인 브금 (수동재생) -->
-<div style="display: flex; justify-content: center; margin: 20px 0;">
-  <iframe width="300" height="170"
-    src="https://youtu.be/dYIT_jeUBKg?si=zCwJxEPVsLP2rsd5"
-    title="YouTube video player"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
-  </iframe>
-</div>
+  <!-- 배경 음악 삽입 -->
+  <audio controls autoplay loop style="display: block; margin: 20px auto;">
+    <source src="프리스타일_-_7_-_Y.mp3" type="audio/mpeg">
+    해당 브라우저는 오디오 태그를 지원하지 않습니다.
+  </audio>
 
   <div class="container">
     <div class="header">
